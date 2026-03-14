@@ -2,8 +2,8 @@ from setuptools import setup, find_packages
 
 setup(
     name='companies-house-api-lib',
-    version='0.1',
-    packages=find_packages(),
+    version='0.2',
+    py_modules=['companieshouse'],
     install_requires=[
         'requests',
     ],

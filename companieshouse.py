@@ -84,17 +84,30 @@ class CompaniesHouseClient:
 
         return self._make_request(f"company/{company_number}/officers")
     
-    def get_company_filing_history(self, filing_history_url):
+    def get_company_filing_history(self, company_number):
         """
         Gets the company filing history.
 
         Args:
-            filing_history_url: A final part of the filings url from the company profile record.
+            company_number: The company number.
 
         Returns:
             A dictionary containing the filing history.
         """
-        return self._make_request(f"{filing_history_url}")
+        return self._make_request(f"company/{company_number}/filing-history")
+    
+    def get_company_filing_detail(self, company_number, transaction_id):
+        """
+        Gets the company filing history.
+
+        Args:
+            company_number: The company number.
+            transaction_id: The transaction id.
+
+        Returns:
+            A dictionary containing the filing history.
+        """
+        return self._make_request(f"company/{company_number}/filing-history/{transaction_id}")
     
     def get_company_registered_office_address(self, company_number):
         """
